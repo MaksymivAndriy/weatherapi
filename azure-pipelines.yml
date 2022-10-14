@@ -11,8 +11,7 @@ resources:
 variables:
   tag: '$(Build.BuildId)'
 
-pool:
-  vmImage: ubuntu-latest
+pool: Self
 
 stages:
 - stage: Build
