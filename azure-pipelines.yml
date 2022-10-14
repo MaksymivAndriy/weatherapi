@@ -26,3 +26,8 @@ stages:
         repository: 'asethori/weatherapi'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
+    - task: AzureWebAppContainer@1
+      inputs:
+        azureSubscription: 'Azure subscription 1(457b89a8-82bc-4337-a34c-dff14982f42d)'
+        appName: 'weatherapitesting'
+        containers: 'asethori/weatherapi:$(Build.BuildId)'
