@@ -11,13 +11,14 @@ resources:
 variables:
   tag: '$(Build.BuildId)'
 
+pool: Self
+
 stages:
 - stage: Build
   displayName: Build image
   jobs:
   - job: Build
     displayName: Build
-    pool: Self
     steps:
     - task: Docker@2
       inputs:
