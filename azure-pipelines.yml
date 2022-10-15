@@ -26,11 +26,27 @@ stages:
         repository: 'asethori/weatherapi'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-    - task: AzureWebAppContainer@1
-      inputs:
-        azureSubscription: 'Azure subscription 1(457b89a8-82bc-4337-a34c-dff14982f42d)'
-        appName: 'weatherapitesting'
-        deployToSlotOrASE: true
-        resourceGroupName: 'tfmainrg'
-        slotName: 'production'
-        containers: 'asethori/weatherapi:$(Build.BuildId)'
+
+- stage: ARM template
+  displayName: Deploy resource
+  jobs:
+  - job: Creation
+    displayName: Creation
+    steps: 
+      - task:
+       
+
+- stage: Deploy
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    steps: 
+      - task: AzureWebAppContainer@1
+        inputs:
+          azureSubscription: 'Azure subscription 1(457b89a8-82bc-4337-a34c-dff14982f42d)'
+          appName: 'weatherapitesting'
+          deployToSlotOrASE: true
+          resourceGroupName: 'tfmainrg'
+          slotName: 'production'
+          containers: 'asethori/weatherapi:$(Build.BuildId)'
