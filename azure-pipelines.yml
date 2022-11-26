@@ -20,9 +20,21 @@ stages:
   - job: Build
     displayName: Build
     steps:
+    - task: SonarQubePrepare@5
+      inputs:
+        SonarQube: 'Sonar connection'
+        scannerMode: 'MSBuild'
+        projectKey: 'TerraformTest_TerraformTest_AYS1d_LvpHgY8tafzUYe'
+        projectName: 'terraformTest'
     - task: Docker@2
       inputs:
         containerRegistry: 'DockerHubConn'
         repository: 'asethori/weatherapi'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
+
+    - task: SonarQubeAnalyze@5
+
+    - task: SonarQubePublish@5
+      inputs:
+        pollingTimeoutSec: '300'
