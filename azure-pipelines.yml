@@ -22,7 +22,7 @@ stages:
     steps:
     - task: SonarQubePrepare@5
       inputs:
-        SonarQube: 'Sonar connection'
+        SonarQube: 'NewSonar'
         scannerMode: 'MSBuild'
         projectKey: 'TerraformTest_TerraformTest_AYS1oC6BaQpvc62GU2Ez'
         projectName: 'terraformTest'
