@@ -24,7 +24,7 @@ stages:
       inputs:
         SonarQube: 'Sonar connection'
         scannerMode: 'MSBuild'
-        projectKey: 'TerraformTest_TerraformTest_AYS1d_LvpHgY8tafzUYe'
+        projectKey: 'TerraformTest_TerraformTest_AYS1oC6BaQpvc62GU2Ez'
         projectName: 'terraformTest'
     - task: Docker@2
       inputs:
