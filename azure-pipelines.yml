@@ -27,15 +27,6 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
 
-- stage: ARM template
-  displayName: Deploy resource
-  jobs:
-  - job: Creation
-    displayName: Creation
-    steps: 
-      - task:
-       
-
 - stage: Deploy
   displayName: Build image
   jobs:
