@@ -20,12 +20,18 @@ stages:
   - job: Build
     displayName: Build
     steps:
+    #- task: SonarQubePrepare@5
+    #  inputs:
+     #   SonarQube: 'NewSonar'
+      #  scannerMode: 'MSBuild'
+       # projectKey: 'TerraformTest_TerraformTest_AYS4Po-jK9_ObKcRus7u'
+        #projectName: 'terraformTest'
     - task: SonarQubePrepare@5
       inputs:
         SonarQube: 'NewSonar'
-        scannerMode: 'MSBuild'
-        projectKey: 'TerraformTest_TerraformTest_AYS4Po-jK9_ObKcRus7u'
-        projectName: 'terraformTest'
+        scannerMode: 'CLI'
+        configMode: 'file'
+
     - task: DotNetCoreCLI@2
       inputs:
         command: 'build'
