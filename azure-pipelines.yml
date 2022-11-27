@@ -24,7 +24,7 @@ stages:
       inputs:
         SonarQube: 'NewSonar'
         scannerMode: 'MSBuild'
-        projectKey: 'TerraformTest_TerraformTest_AYS4OMuH2kCYxim_-aOg'
+        projectKey: 'TerraformTest_TerraformTest_AYS4Po-jK9_ObKcRus7u'
         projectName: 'terraformTest'
     - task: DotNetCoreCLI@2
       inputs:
