@@ -20,22 +20,17 @@ stages:
   - job: Build
     displayName: Build
     steps:
-    #- task: SonarQubePrepare@5
-    #  inputs:
-     #   SonarQube: 'NewSonar'
-      #  scannerMode: 'MSBuild'
-       # projectKey: 'TerraformTest_TerraformTest_AYS4Po-jK9_ObKcRus7u'
-        #projectName: 'terraformTest'
     - task: SonarQubePrepare@5
       inputs:
         SonarQube: 'NewSonar'
-        scannerMode: 'CLI'
-        configMode: 'file'
+        scannerMode: 'MSBuild'
         projectKey: 'TerraformTest_TerraformTest_AYS4Po-jK9_ObKcRus7u'
+        projectName: 'terraformTest'
 
     - task: DotNetCoreCLI@2
       inputs:
         command: 'build'
+        
     - task: Docker@2
       inputs:
         containerRegistry: 'DockerHubConn'
@@ -44,7 +39,6 @@ stages:
         Dockerfile: '**/Dockerfile'
 
     - task: SonarQubeAnalyze@5
-
     - task: SonarQubePublish@5
       inputs:
         pollingTimeoutSec: '300'
