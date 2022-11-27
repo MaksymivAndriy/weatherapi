@@ -26,6 +26,9 @@ stages:
         scannerMode: 'MSBuild'
         projectKey: 'TerraformTest_TerraformTest_AYS1oC6BaQpvc62GU2Ez'
         projectName: 'terraformTest'
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'build'
     - task: Docker@2
       inputs:
         containerRegistry: 'DockerHubConn'
