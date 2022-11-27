@@ -11,7 +11,7 @@ resources:
 variables:
   tag: '$(Build.BuildId)'
 
-pool: Linux
+pool: windows
 
 stages:
 - stage: Build
