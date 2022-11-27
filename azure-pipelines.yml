@@ -31,6 +31,7 @@ stages:
         SonarQube: 'NewSonar'
         scannerMode: 'CLI'
         configMode: 'file'
+        projectKey: 'TerraformTest_TerraformTest_AYS4Po-jK9_ObKcRus7u'
 
     - task: DotNetCoreCLI@2
       inputs:
